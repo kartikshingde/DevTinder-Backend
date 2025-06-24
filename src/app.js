@@ -3,18 +3,25 @@ const express=require('express')
 const app=express();
 
 
-
-app.use("/login",(req,res)=>{
-    res.send("Please Login to Continue..")
+app.get("/user",(req,res)=>{
+    res.send({firstName:"Kartik",lastName:"Shingde"})
 })
 
-app.use("/courses",(req,res)=>{
-    res.send("Enroll in our courses.")
+app.post("/user",(req,res)=>{
+    
+    //data saved to database
+    res.send("Data successfully saved to database!")
 })
-app.use("/",(req,res)=>{
-    res.send("Home")
+
+app.delete("/user",(req,res)=>{
+    res.send("data deleted from database successfully from database!")
 })
-//Try to write "/" this at the end else it server will listen to this always
+
+
+//this will match all the Http Api call to /test
+app.use("/test",(req,res)=>{
+    res.send("Hello from Server test")
+})
 
 
 app.listen(7777,()=>{
