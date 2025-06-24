@@ -1,0 +1,20 @@
+{
+  "name": "devtinder-namastenode",
+  "version": "1.0.0",
+  "description": "tinder for developers",
+  "main": "index.js",
+  "scripts": {
+    "start":"node src/app.js",
+    "dev":"nodemon src/app.js"
+  },
+  "keywords": [
+    "nodejs",
+    "js",
+    "backend"
+  ],
+  "author": "kartik shingde",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
