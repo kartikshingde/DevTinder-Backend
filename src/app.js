@@ -3,25 +3,30 @@ const express=require('express')
 const app=express();
 
 
-app.get("/user",(req,res)=>{
+app.get("/user/:userId/:name/:password",(req,res)=>{
+    console.log(req.params)
     res.send({firstName:"Kartik",lastName:"Shingde"})
 })
-
-app.post("/user",(req,res)=>{
-    
-    //data saved to database
-    res.send("Data successfully saved to database!")
-})
-
-app.delete("/user",(req,res)=>{
-    res.send("data deleted from database successfully from database!")
-})
+// /user/:userId/:name/:password =>dynamic routing...
+// for query like ?userid=101  => requst.query
+// for params  => request.params
 
 
-//this will match all the Http Api call to /test
-app.use("/test",(req,res)=>{
-    res.send("Hello from Server test")
-})
+
+
+
+// // /ac, /abc
+// // app.get(/^\/ab?c$/,(req,res)=>{
+// //     res.send({firstName:"Kartik",lastName:"Shingde"})
+// // })
+// app.get(/^\/a(bc)?d$/,(req,res)=>{
+//     res.send({firstName:"Kartik",lastName:"Shingde"})
+// })
+// // ?=optional
+
+// app.get(/.*fly$/,(req,res)=>{
+//     res.send({firstName:"Kartik",lastName:"Shingde"})
+// })
 
 
 app.listen(7777,()=>{
